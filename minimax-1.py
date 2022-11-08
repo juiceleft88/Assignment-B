@@ -127,9 +127,9 @@ def minimax(board, depth, isMax):
                     score = minimax(board, depth+1, False)
                     board[row][col] = EMPTY
                     best_score = max(score, best_score)
-                    #depth_best_score = best_score-depth
+                    depth_best_score = best_score-depth
                     #print(depth_best_score)
-        return best_score
+        return depth_best_score
     else:
         best_score = 999
         for row in range(len(board)):
@@ -139,7 +139,7 @@ def minimax(board, depth, isMax):
                     score = minimax(board, depth+1, True)
                     board[row][col] = EMPTY
                     best_score = min(score, best_score)
-                    print(depth)
+                    #print(depth)
         return best_score
         
 
